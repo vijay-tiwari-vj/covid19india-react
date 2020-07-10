@@ -16,6 +16,7 @@ const Minigraphs = lazy(() => import('./Minigraphs'));
 const Footer = lazy(() => import('./Footer'));
 const Search = lazy(() => import('./Search'));
 const Level = lazy(() => import('./Level'));
+const StackedBar = lazy(() => import('./StackedBar'));
 const MapSwitcher = lazy(() => import('./MapSwitcher'));
 const StateHeader = lazy(() => import('./StateHeader'));
 
@@ -98,6 +99,14 @@ function Home(props) {
             {timeseries && (
               <Suspense fallback={<div style={{height: '50rem'}} />}>
                 <Minigraphs timeseries={timeseries['TT']?.dates} {...{date}} />
+              </Suspense>
+            )}
+          </div>
+
+          <div style={{position: 'relative'}}>
+            {data && (
+              <Suspense fallback={<div style={{height: '5rem'}}/>}>
+                <StackedBar data={data['TT']}/>
               </Suspense>
             )}
           </div>

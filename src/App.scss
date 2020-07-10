@@ -1612,6 +1612,27 @@ abbr {
   }
 }
 
+.StackedBar {
+  align-self: center;
+  margin: 1rem 0.5rem;
+
+  .progress-height {
+      height: 30px;
+  }
+
+  .active-style {
+      background-color: $blue;
+  }
+
+  .recovered-style {
+      background-color: $green;
+  }
+
+  .deceased-style {
+      background-color: $gray;
+  }
+}
+
 .TableLoader {
   margin-bottom: -.25rem;
 }
